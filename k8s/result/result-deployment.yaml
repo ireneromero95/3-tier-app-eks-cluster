@@ -18,3 +18,12 @@ spec:
           image: ireneromero95/result:latest
           ports:
             - containerPort: 4000
+          env:
+            - name: POSTGRES_HOST
+              value: "db"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+            - name: POSTGRES_DB
+              value: "postgres" 

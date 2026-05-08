@@ -16,3 +16,14 @@ spec:
       containers:
         - name: worker
           image: ireneromero95/worker:latest
+          env:
+            - name: REDIS_HOST
+              value: "redis-service"
+            - name: POSTGRES_HOST
+              value: "db"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+            - name: POSTGRES_DB
+              value: "postgres"
