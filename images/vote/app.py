@@ -14,7 +14,18 @@ redis_port = int(os.getenv('REDIS_PORT', 6379))  # Default Redis port is 6379
 hostname = socket.gethostname()
 
 app = Flask(__name__)
+#Adding this
+app = Flask (__name__)
+app.config['APPLICATION_ROOT'] = '/vote'
 
+from werkzeug.middleware.dispatcher import DispatcherMiddleware
+from werkzeug.wrappers import Response
+
+app.wsgi_app = DispatcherMiddleware(
+    Response('Not Found', status=404), 
+    {'/vote': app.wsgi_app}
+)
+#until here
 gunicorn_error_logger = logging.getLogger('gunicorn.error')
 app.logger.handlers.extend(gunicorn_error_logger.handlers)
 app.logger.setLevel(logging.INFO)
