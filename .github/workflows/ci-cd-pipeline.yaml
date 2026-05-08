@@ -28,24 +28,24 @@ jobs:
     - name: Build and push Vote image
       uses: docker/build-push-action@v3
       with:
-        context: ./vote
-        file: ./vote/Dockerfile
+        context: ./images/vote
+        file: ./images/vote/Dockerfile
         push: true
         tags: ireneromero95/vote:latest
 
     - name: Build and push Worker image
       uses: docker/build-push-action@v3
       with:
-        context: ./worker
-        file: ./worker/Dockerfile
+        context: ./images/worker
+        file: ./images/worker/Dockerfile
         push: true
         tags: ireneromero95/worker:latest
 
     - name: Build and push Result image
       uses: docker/build-push-action@v3
       with:
-        context: ./result
-        file: ./result/Dockerfile
+        context: ./images/result
+        file: ./images/result/Dockerfile
         push: true
         tags: ireneromero95/result:latest
     
