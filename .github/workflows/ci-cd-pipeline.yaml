@@ -62,12 +62,13 @@ jobs:
         chmod +x kubectl
         sudo mv kubectl /usr/local/bin/
     
-    - name: Install eksctl
-      run: |
-        curl -sL https://eksctl.io/install | sh
+    # - name: Install eksctl
+    #   run: |
+    #     curl --silent --location "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_Linux_amd64.tar.gz" | tar xz -C /tmp
+    #     sudo mv /tmp/eksctl /usr/local/bin
 
     - name: Update Kubeconfig
-      run: eksctl utils write-kubeconfig --cluster eks-cluster-irene-and-joao --region us-east-1
+      run: aws eks update-kubeconfig --cluster eks-cluster-irene-and-joao --region us-east-1
 
     - name: Deploy to EKS
       run: |
