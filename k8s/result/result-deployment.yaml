@@ -17,7 +17,7 @@ spec:
         - name: result
           image: ireneromero95/result:latest
           ports:
-            - containerPort: 4000
+            - containerPort: 80
           env:
             - name: POSTGRES_HOST
               value: "db"
@@ -27,3 +27,5 @@ spec:
               value: "postgres"
             - name: POSTGRES_DB
               value: "postgres" 
+            - name: PORT
+              value: "80"
