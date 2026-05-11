@@ -263,6 +263,13 @@ Access:
 
 ---
 
-## 👥 Authors
+## Authors
 
-Irene Romero & João — IronHack DevOps Bootcamp, Week 6
+| Author | Links |
+|---|---|
+| **João Ribeiro** | [GitHub](https://github.com/joaodmorgadoribeiro-del) · [LinkedIn](https://www.linkedin.com/in/joaoribeiro9595) |
+| **Irene Romero** | [GitHub](https://github.com/ireneromero95) · [LinkedIn](http://linkedin.com/in/irene-romero-mart%C3%ADnez-0b6215119/) |
+
+---
+
+*Ironhack Cloud & DevOps Bootcamp — Capstone Project*
