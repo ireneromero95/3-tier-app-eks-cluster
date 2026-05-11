@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: voting-app-ingress
+  namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - vote.joao.and.irene.ironlabs.online
+        - result.joao.and.irene.ironlabs.online
+      secretName: joao-and-irene-tls-secret
+  rules:
+    - host: vote.joao.and.irene.ironlabs.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vote-service
+                port:
+                  number: 80
+    - host: result.joao.and.irene.ironlabs.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: result-service
+                port:
+                  number: 80
